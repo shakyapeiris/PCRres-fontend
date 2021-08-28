@@ -1,0 +1,15 @@
+[
+    {
+        "Name": "Hospital 01",
+        "Address": "some address",
+        "Contact No": "0775532529",
+        "Bookings": [
+            {
+                "user": "001",
+                "date": "xxxxx",
+                "time-slot": "x-y"
+            }
+        ]
+    }
+]
+

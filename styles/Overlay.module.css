@@ -1,0 +1,18 @@
+.BackGround{
+    position: absolute;
+    width: 100%;
+    height: 85.3vh;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.363);
+}
+
+.Container{
+    width: 50%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    top:20%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+}

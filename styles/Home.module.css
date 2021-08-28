@@ -1,0 +1,29 @@
+.Main{
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    top: 30%;
+    transform: translateX(-50%);
+    
+}
+
+.Main h1{
+    
+    font-size: 5rem;
+    background: rgb(0,103,34);
+    background: linear-gradient(324deg, rgba(0,103,34,1) 0%, rgba(0,255,141,1) 100%, rgba(247,161,227,1) 100%);
+    font-family: 'Paytone One', sans-serif;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.Main p{
+    font-family: monospace;
+    text-shadow: 4px 4px 16px rgba(150, 150, 150, 0.66);
+    font-weight: bolder;
+    font-size: 2rem;
+}
+
+.Canvas{
+    opacity: 0.7;
+}

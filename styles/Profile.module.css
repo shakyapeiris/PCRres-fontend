@@ -1,0 +1,154 @@
+.ProfileDataContainer {
+  width: 50%;
+  height: 85.3vh;
+  overflow-y: scroll;
+}
+
+.detailContainer {
+  width: 50%;
+  padding: 0px 10px;
+}
+
+
+.Cont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: white;
+  height: 85.3vh;
+}
+
+.BookingContainer,
+.RecordContainer {
+  height: 32vh;
+  overflow-y: scroll;
+}
+
+.ProfileDataContainer h1 {
+  font-family: "Paytone One", sans-serif;
+  text-align: center;
+}
+
+.Container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Image,
+.FormCont {
+  width: 50%;
+  height: 85.3vh;
+}
+
+.Image {
+  padding: 30px;
+  background: rgb(0, 103, 34);
+  background: linear-gradient(
+    324deg,
+    rgba(0, 103, 34, 1) 0%,
+    rgba(0, 255, 141, 1) 100%,
+    rgba(247, 161, 227, 1) 100%
+  );
+}
+
+.FormCont {
+  background-color: white;
+  padding: 50px 20px;
+  overflow: scroll;
+}
+
+.Container h1 {
+  text-align: center;
+  font-family: "Paytone One", sans-serif;
+}
+
+.ErrorContainer {
+  width: 60%;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.Container p {
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
+}
+.Container p a {
+  color: rgb(0, 103, 34);
+}
+
+.Image h1,
+.Image h3 {
+  color: white;
+  font-family: "Paytone One", sans-serif;
+  letter-spacing: 1px;
+}
+
+.Image li,
+.Image p {
+  color: white;
+  font-family: "Open Sans", sans-serif;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.ProfileDataContainer::-webkit-scrollbar,
+.BookingContainer::-webkit-scrollbar,
+.RecordContainer::-webkit-scrollbar {
+  background: white;
+  width: 10px;
+}
+.ProfileDataContainer label {
+  font-family: "Paytone One", sans-serif;
+}
+/* Track */
+.ProfileDataContainer::-webkit-scrollbar-track,
+.BookingContainer::-webkit-scrollbar-track,
+.RecordContainer::-webkit-scrollbar-track {
+  background: white;
+}
+
+/* Handle */
+.ProfileDataContainer::-webkit-scrollbar-thumb,
+.BookingContainer::-webkit-scrollbar-thumb,
+.RecordContainer::-webkit-scrollbar-thumb {
+  background: rgb(175, 175, 175);
+  border-radius: 45px;
+  transition: 0.3s all ease;
+  height: 5px;
+}
+
+/* Handle on hover */
+.ProfileDataContainer::-webkit-scrollbar-thumb:hover,
+.BookingContainer::-webkit-scrollbar-thumb:hover,
+.RecordContainer::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.SelectContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ProvinceContainer {
+  display: inline-block;
+  width: 48%;
+}
+
+.ProvinceContainer select {
+  width: 96%;
+  margin-left: 1px;
+  padding: 5px;
+  border: 1px solid rgb(0, 103, 34);
+  outline: none;
+  margin-left: 3%;
+  border-radius: 3px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.GenderCont label,
+.GenderCont h3 {
+  font-family: "Open Sans", sans-serif;
+}

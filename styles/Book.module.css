@@ -1,0 +1,52 @@
+.Container select {
+  width: 100%;
+  border: 2px solid rgb(0, 103, 34);
+  outline: none;
+  border-radius: 3px;
+  font-family: "Open Sans", sans-serif;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.Container option{
+    width: 100%;
+  padding: 10px;
+  border: 1px solid black;
+  outline: none;
+  border-radius: 3px;
+  font-family: "Open Sans", sans-serif;
+  border-radius: 5px;
+}
+
+.Container > div > label{
+    font-family: 'Open Sans', sans-serif;
+    display: block;
+}
+.Container label{
+    font-family: 'Open Sans', sans-serif;
+}
+.Container{
+    width: 50%;
+    position: relative;
+    left: 50%;
+    top: 5%;
+    transform: translateX(-50%);
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 5px 5px 31px 5px rgba(0,0,0,0.1);
+}
+
+.FormGroup{
+    margin: 15px auto;
+}
+
+.Container h1{
+    text-align: center;
+  font-family: "Paytone One", sans-serif;
+
+}
+
+.Container .RadioContainer{
+    margin: 5px;
+}

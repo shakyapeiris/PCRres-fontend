@@ -1,0 +1,119 @@
+.Container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row-reverse;
+}
+
+.Image,
+.FormCont {
+  width: 50%;
+  height: 85.3vh;
+}
+
+.Image {
+  padding: 30px;
+  background: rgb(34, 193, 195);
+  background: linear-gradient(
+    132deg,
+    rgba(34, 193, 195, 1) 0%,
+    rgba(253, 187, 45, 1) 100%
+  );
+}
+
+.FormCont {
+  background-color: white;
+  padding: 50px 20px;
+  overflow: scroll;
+}
+
+.Container h1 {
+  text-align: center;
+  font-family: "Paytone One", sans-serif;
+}
+
+.ErrorContainer {
+  width: 60%;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.Container p {
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
+}
+.Container p a {
+  color: rgb(0, 103, 34);
+}
+
+.Image h1,
+.Image h3 {
+  color: white;
+  font-family: "Paytone One", sans-serif;
+  letter-spacing: 1px;
+}
+
+.Image li,
+.Image p {
+  color: white;
+  font-family: "Open Sans", sans-serif;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.FormCont::-webkit-scrollbar {
+  background: white;
+  width: 10px;
+}
+
+/* Track */
+.FormCont::-webkit-scrollbar-track {
+  background: white;
+}
+
+/* Handle */
+.FormCont::-webkit-scrollbar-thumb {
+  background: rgb(175, 175, 175);
+  border-radius: 45px;
+  transition: 0.3s all ease;
+  height: 5px;
+}
+
+/* Handle on hover */
+.FormCont::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.SelectContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ProvinceContainer {
+  display: inline-block;
+  width: 48%;
+}
+
+.ProvinceContainer select {
+  width: 96%;
+  margin-left: 1px;
+  padding: 5px;
+  border: 1px solid rgb(0, 103, 34);
+  outline: none;
+  margin-left: 3%;
+  border-radius: 3px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.GenderCont label,
+.GenderCont h3 {
+  font-family: "Open Sans", sans-serif;
+}
+
+.CheckBoxContainer{
+    display: flex;
+    justify-content: space-between;
+  font-family: "Open Sans", sans-serif;
+  align-items: center;
+}

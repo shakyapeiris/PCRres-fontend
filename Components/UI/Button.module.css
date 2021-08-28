@@ -1,0 +1,20 @@
+.btn{
+    width: 30%;
+    margin-left: 35%;
+    background: rgb(0,103,34);
+    background: linear-gradient(324deg, rgba(0,103,34,1) 0%, rgba(0,255,141,1) 100%, rgba(247,161,227,1) 100%);
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.5s all ease;
+    margin-top: 10px;
+}
+
+.btn:hover{
+
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border: 1px solid rgb(0,103,34);
+}

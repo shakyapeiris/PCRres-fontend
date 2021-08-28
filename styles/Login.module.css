@@ -1,0 +1,65 @@
+.Container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Image,
+.FormCont {
+  width: 50%;
+  height: 85.3vh;
+}
+
+.Image {
+  padding: 30px;
+  background: rgb(0, 103, 34);
+  background: linear-gradient(
+    324deg,
+    rgba(0, 103, 34, 1) 0%,
+    rgba(0, 255, 141, 1) 100%,
+    rgba(247, 161, 227, 1) 100%
+  );
+}
+
+.FormCont {
+  background-color: white;
+  padding: 50px 20px;
+}
+
+.Container h1 {
+  text-align: center;
+  font-family: "Paytone One", sans-serif;
+}
+
+.ErrorContainer {
+  width: 60%;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.Container p {
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
+}
+.Container p a {
+  color: rgb(0, 103, 34);
+}
+
+.Image h1,
+.Image h3 {
+  color: white;
+  font-family: "Paytone One", sans-serif;
+  letter-spacing: 1px;
+}
+
+.Image li,
+.Image p {
+  color: white;
+  font-family: "Open Sans", sans-serif;
+  margin-bottom: 10px;
+}
+
+.Image p {
+  color: rgb(52, 0, 95);
+  text-align: left;
+}

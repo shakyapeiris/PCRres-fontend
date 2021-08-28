@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.Face{
+  animation: faceAnimation reverse infinite ease-in-out 3s;
+  transform-origin: bottom;
+}
+
+@keyframes faceAnimation {
+  0%{
+    transform: rotateZ(0deg);
+  }
+  50%{
+    transform: rotateZ(60deg);
+  }
+  100%{
+    transform: rotateZ(-60deg);
+  }
+}
+
+.error{
+  color: rgb(255, 83, 83);
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 900;
+}
+
+.success{
+  color: rgb(83, 255, 91);
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 900;
+}

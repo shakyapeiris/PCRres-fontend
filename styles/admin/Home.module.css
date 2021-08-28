@@ -1,0 +1,117 @@
+.Container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Open Sans", sans-serif;
+}
+
+.Container h1 {
+  font-family: "Paytone One", sans-serif;
+  text-align: center;
+}
+
+.ReportContainer,
+.BookingContainer {
+  width: 48%;
+  margin-left: 1%;
+  height: 85vh;
+  overflow: scroll;
+  padding: 10px;
+}
+
+.Box {
+  width: 100%;
+  background: rgb(0, 103, 34);
+  background: linear-gradient(
+    324deg,
+    rgba(0, 103, 34, 1) 0%,
+    rgba(0, 255, 141, 1) 100%,
+    rgba(247, 161, 227, 1) 100%
+  );
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+}
+
+.Circle {
+  background-color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: rgb(0, 103, 34);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: 0.3s background-color ease-in-out;
+}
+
+.Circle:hover {
+  background-color: rgb(233, 233, 233);
+}
+
+.BookingContainer::-webkit-scrollbar,
+.ReportContainer::-webkit-scrollbar {
+  background: white;
+  width: 10px;
+}
+
+/* Track */
+.BookingContainer::-webkit-scrollbar,
+.ReportContainer::-webkit-scrollbar {
+  background: white;
+}
+
+/* Handle */
+.BookingContainer::-webkit-scrollbar,
+.ReportContainer::-webkit-scrollbar {
+  background: rgb(175, 175, 175);
+  border-radius: 45px;
+  transition: 0.3s all ease;
+  height: 5px;
+}
+
+/* Handle on hover */
+.BookingContainer::-webkit-scrollbar,
+.ReportContainer::-webkit-scrollbar {
+  background: #555;
+}
+
+.ButtonContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.CancelButton {
+  background-color: rgb(253, 78, 78);
+  padding: 20px;
+  width: 40%;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  font-family: "Open Sans", sans-serif;
+  color: white;
+}
+
+.ContinueButton {
+  background-color: rgb(78, 253, 151);
+  padding: 20px;
+  width: 40%;
+  border-radius: 5px;
+  border: none;
+  font-family: "Open Sans", sans-serif;
+  color: white;
+    margin-top: 5px;
+  cursor: pointer;
+}
+
+.OverlayDiv{
+  font-family: "Open Sans", sans-serif;
+}

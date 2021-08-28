@@ -1,0 +1,14 @@
+input.Input{
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid rgb(0,103,34);    
+    font-family: 'Open Sans', sans-serif;
+    width: 100%;
+    outline: none;
+    transition: 0.5s border ease;
+}
+
+input.Input:focus{
+    border: 2px solid rgb(0, 96, 103);    
+
+}

@@ -1,0 +1,41 @@
+.Container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 15px;
+}
+
+.Body{
+    background-color: rgb(224, 224, 224);
+    height: 85vh;
+}
+
+.Container .Brand{
+    background: rgb(0,103,34);
+    background: linear-gradient(324deg, rgba(0,103,34,1) 0%, rgba(0,255,141,1) 100%, rgba(247,161,227,1) 100%);
+    font-family: 'Paytone One', sans-serif;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: rgb(97, 0, 207);
+    cursor: pointer;
+}
+
+.Container nav ul li{
+    display: inline-block;
+    margin-right: 10px;
+    font-family: 'Open Sans', sans-serif;
+    transition: 0.5s all ease;
+    padding: 5px 0px;
+    letter-spacing: 1px;
+    color: rgb(23, 0, 26);
+}
+
+.Container nav ul li:last-child{
+    display: inline-block;
+    margin-right: none;
+}
+
+.Container nav ul li:hover{
+    background-color: pink;
+    padding: 5px;
+}
