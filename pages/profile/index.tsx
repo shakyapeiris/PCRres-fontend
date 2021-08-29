@@ -264,7 +264,7 @@ function Index() {
             <div className={classes.detailContainer}>
               <h3>Reports</h3>
               <div className={classes.RecordContainer}>
-                {data.records.length > 0 ? data.records.reverse().map((i: any, index: number) => {
+                {data.records.length > 0 ? data.records.map((i: any, index: number) => {
                   return (
                     <div
                     key={index}
