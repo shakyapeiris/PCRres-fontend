@@ -103,7 +103,7 @@ function Register(props: AdminRegisterInterface) {
         <p>Open days</p>
         {props.days.map((day, index) => {
           return (
-            <label className={classes.CheckBoxContainer} key={Math.random()/Math.random()}>
+            <label className={classes.CheckBoxContainer} key={Math.random()}>
               {day.date}
               <input
                 type="checkbox"
@@ -120,7 +120,7 @@ function Register(props: AdminRegisterInterface) {
         <p>Available Time Slots</p>
         {props.timeSlots.map((time, index) => {
           return (
-            <label className={classes.CheckBoxContainer} key={Math.random()/Math.random()}>
+            <label className={classes.CheckBoxContainer} key={Math.random()}>
               {time.time}
               <input
                 type="checkbox"

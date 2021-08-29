@@ -267,7 +267,7 @@ function Index() {
                 {data.records.length > 0 ? data.records.reverse().map((i: any, index: number) => {
                   return (
                     <div
-                    key={i.id}
+                    key={index}
                       className={
                         i.pending
                           ? classes.ResultPending
