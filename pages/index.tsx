@@ -1,6 +1,8 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { useRef, useEffect } from "react";
+import { useRouter } from "next/router";
+import { useRef, useEffect, useContext } from "react";
+import { AuthContext } from "../Store/AuthContext";
 import classes from "../styles/Home.module.css";
 
 let ctx: any;
@@ -98,6 +100,16 @@ function animate() {
 
 const Home: NextPage = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const router = useRouter();
+  const authCtx = useContext(AuthContext)
+  useEffect(() => {
+    if (authCtx.loginId && authCtx.isAdmin){
+      router.replace('/admin/home')
+    }
+    else if(authCtx.loginId){
+      router.replace('/profile')
+    }
+  })
   useEffect(() => {
     if (canvasRef.current) {
       const canvas = canvasRef.current;

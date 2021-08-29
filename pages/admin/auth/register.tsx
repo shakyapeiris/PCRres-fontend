@@ -1,9 +1,24 @@
-import React, { FormEventHandler, useEffect, useState } from "react";
+import React, { FormEventHandler, useEffect, useState, useContext } from "react";
 import classes from "../../../styles/admin/register.module.css";
 import RegisterForm from "../../../Components/Admin/Auth/Register";
 import useInput from "../../../Hooks/useInput";
-import useSelect from "../../../Hooks/use-select";
+import { AuthContext } from "../../../Store/AuthContext";
+import { useRouter } from "next/router";
 const Register = () => {
+
+  const ctx = useContext(AuthContext);
+
+  const router = useRouter()
+  
+  useEffect(() => {
+    if (ctx.loginId && ctx.isAdmin){
+      router.replace('/admin/home')
+    }
+    else if (!ctx.isAdmin && ctx.loginId){
+      router.replace('/profile')
+    }
+  }, [])
+
   const name = useInput((inputVal) => inputVal.toString().trim() != "");
 
   const address = useInput((inputVal) => inputVal.toString().trim() != "");

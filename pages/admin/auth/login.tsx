@@ -16,10 +16,15 @@ const login = () => {
   const ctx = useContext(AuthContext);
 
   const router = useRouter()
-  if (ctx.loginId && ctx.isAdmin){
-    router.push('/admin/home')
-  }
-
+  
+  useEffect(() => {
+    if (ctx.loginId && ctx.isAdmin){
+      router.replace('/admin/home')
+    }
+    else if (!ctx.isAdmin && ctx.loginId){
+      router.replace('/profile')
+    }
+  }, [])
 
   const submitFormHandler: FormEventHandler<HTMLFormElement> = async(e) => {
     e.preventDefault();

@@ -9,6 +9,108 @@
   padding: 0px 10px;
 }
 
+.Booking{
+  border: 2px solid rgb(0, 103, 34);
+  background: rgb(0, 103, 34);
+  background: linear-gradient(
+    324deg,
+    rgba(0, 103, 34, 1) 0%,
+    rgba(0, 255, 141, 1) 100%,
+    rgba(247, 161, 227, 1) 100%
+  );
+  background-clip: text;
+  font-family: "Open Sans", sans-serif;
+  -webkit-text-fill-color: transparent;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+
+.ResultRecieved{
+  border: 2px solid rgb(0, 103, 34);
+  background: rgb(0, 103, 34);
+  background: linear-gradient(
+    324deg,
+    rgba(0, 103, 34, 1) 0%,
+    rgba(0, 255, 141, 1) 100%,
+    rgba(247, 161, 227, 1) 100%
+  );
+  background-clip: text;
+  font-family: "Open Sans", sans-serif;
+  -webkit-text-fill-color: transparent;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+  justify-content: space-between;
+}
+
+
+.Circle {
+  color: black;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid rgb(0, 103, 34);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-weight: bolder;
+}
+
+.RedCircle{
+  color: rgb(243, 102, 97);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid rgb(243, 102, 97);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-weight: bolder;
+}
+
+.OverlayDiv{
+  font-family: "Open Sans", sans-serif;
+}
+
+.ButtonContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.CancelButton {
+  background-color: rgb(253, 78, 78);
+  padding: 20px;
+  width: 40%;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  font-family: "Open Sans", sans-serif;
+  color: white;
+}
+
+.ResultPending{
+  border: 2px solid rgb(243, 102, 97);
+  background-color: white;
+  color: rgb(243, 102, 97);
+  font-family: "Open Sans", sans-serif;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+
+  justify-content: space-between;
+}
 
 .Cont {
   display: flex;

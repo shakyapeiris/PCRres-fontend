@@ -1,13 +1,30 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../Store/AuthContext";
 import classes from "../../../styles/admin/Home.module.css";
 import Overlay from "../../../Components/Overlay";
+import Input from "../../../Components/UI/Input";
+import useInput from "../../../Hooks/useInput";
+import { useRouter } from "next/router";
+
+let date = "";
+let timeStamp = "";
+const timeArray: any = {
+  "08:00 - 10:00": 1,
+  "10:00 - 12:00": 2,
+  "12:00 - 14:00": 3,
+  "14:00 - 16:00": 4,
+  "16:00 - 18:00": 5
+}
+
 function Index() {
   const [data, setData] = useState<null | any>(null);
   const [loading, setLoading] = useState(true);
   const [selectedBooking, setSelectedBoking] = useState<any>(null);
   const [selectedReport, setSelectedReport] = useState<any>(null);
   const [sending, setSending] = useState(false);
+  
+  const search = useInput((inputVal) => inputVal.toString().trim() != "");
+  const [filteredRecords, setFilteredRecords] = useState<any>(null) 
 
   const fetchData = async () => {
     setLoading(true);
@@ -16,10 +33,24 @@ function Index() {
     )}`;
     const response = await fetch(url);
     const data = await response.json();
+    data.bookings.sort((a: any, b: any) => {
+      if (a.date === b.date){
+        return timeArray[a.time] - timeArray[b.time]
+      }
+      return new Date(a.date).getTime() - new Date(b.date).getTime()
+    })
+
     console.log(data);
     setData(data);
+    setFilteredRecords(data.records)
     setLoading(false);
   };
+
+  useEffect(() => {
+    if (search.inputValue.trim().length > 1){
+      setFilteredRecords(data && data.records.filter((i:any) => i.testId.includes(search.inputValue)))
+    }
+  }, [search.inputValue])
 
   const changeReportFocus = (index: number) => {
     setSelectedReport(data.records[index]);
@@ -38,6 +69,10 @@ function Index() {
   };
 
   const [status, setStatus] = useState("");
+
+  const authContext = useContext(AuthContext)
+
+  const router = useRouter()
 
   const postNewRecord = async () => {
     setSending(true);
@@ -83,7 +118,24 @@ function Index() {
     fetchData();
   };
 
+  function changeDate(iDate: string){ 
+    timeStamp = "";
+    date = iDate; 
+    return (<p style={{paddingBottom: "3px", borderBottom: "2px solid black"}}>{iDate}</p>);
+  }
+
+  function changeTime(iTime: string){
+    timeStamp = iTime;
+    return (<h3 style={{textAlign: "center"}}>{iTime}</h3>)
+  }
+
   useEffect(() => {
+    if (authContext.loginId && !authContext.isAdmin){
+      router.replace('/profile')
+    }
+    else if(authContext.loginId === null){
+      router.replace('/admin/auth/login')
+    }
     fetchData();
   }, []);
   return (
@@ -166,12 +218,17 @@ function Index() {
               <h1>Bookings</h1>
               {data.bookings.map((i: any, index: number) => {
                 return (
+                  <>
+                  {i.date != date && changeDate(i.date)}
+                  {i.time != timeStamp && changeTime(i.time)}
                   <div className={classes.Box}>
                     <div>
                       <h3>{i._id}</h3>
-                      <p>Name: {i.user.name}</p>
                       <p>NIC: {i.user.NIC}</p>
                       <p>Token: {i.token}</p>
+                      <p>
+                        Date: {i.date}, Time: {i.time}
+                      </p>
                     </div>
                     <div
                       className={classes.Circle}
@@ -182,12 +239,21 @@ function Index() {
                       +
                     </div>
                   </div>
+                  </>
                 );
               })}
             </div>
             <div className={classes.ReportContainer}>
               <h1>Pending reports</h1>
-              {data.records.map((i: any, index: number) => {
+              <Input
+                type="text"
+                styles={undefined}
+                onChange={search.valueChangeHandler}
+                onBlur={search.inputBlurHandler}
+                value={search.inputValue}
+                placeholder="Search"
+              />
+              {filteredRecords && filteredRecords.map((i: any, index: number) => {
                 return (
                   <div className={classes.Box}>
                     <div>

@@ -29,9 +29,6 @@ const Layout = (props: { children: ReactElement }) => {
                 <li>
                   <Link href="/analytics">Past Analytics</Link>
                 </li>
-                <li>
-                  <Link href="/map">Patient Map</Link>
-                </li>
               </>
             )}
             {ctx.loginId && !ctx.isAdmin && (

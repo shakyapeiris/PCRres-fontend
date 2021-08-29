@@ -1,4 +1,4 @@
-import React, { useState, FormEventHandler, useContext } from "react";
+import React, { useState, FormEventHandler, useContext, useEffect } from "react";
 import useInput from "../../Hooks/useInput";
 import LoginForm from "../../Components/Auth/Login";
 import classes from "../../styles/Login.module.css";
@@ -15,12 +15,16 @@ const login = () => {
   const [success, setSuccess] = useState(false)
   const ctx = useContext(AuthContext);
 
-  const router = useRouter();
-
-  if(ctx.loginId){
-    router.push('/profile')
-  }
-
+  const router = useRouter()
+  
+  useEffect(() => {
+    if (ctx.loginId && ctx.isAdmin){
+      router.replace('/admin/home')
+    }
+    else if (!ctx.isAdmin && ctx.loginId){
+      router.replace('/profile')
+    }
+  }, [])
   const submitFormHandler: FormEventHandler<HTMLFormElement> = async(e) => {
     e.preventDefault();
 

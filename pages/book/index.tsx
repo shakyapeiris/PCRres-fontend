@@ -3,11 +3,14 @@ import React, {
   useState,
   FormEventHandler,
   useContext,
+  useEffect,
 } from "react";
 import classes from "../../styles/Book.module.css";
 import Input from "../../Components/UI/Input";
 import useInput from "../../Hooks/useInput";
 import Button from "../../Components/UI/Button";
+import { AuthContext } from "../../Store/AuthContext";
+import { useRouter } from "next/router";
 
 interface Props {
   mydata: {
@@ -31,7 +34,16 @@ const daysOfWeek = [
 ];
 
 function Index(props: Props) {
-  //Instead of this array an array will be fetched
+  const ctx = useContext(AuthContext)
+  let router = useRouter();
+  useEffect(() => {
+    if(ctx.loginId === null){
+      router.push('/auth/login')
+    }
+    else if (ctx.isAdmin && ctx.loginId){
+      router.replace('/admin/home')
+    }
+  }, [])
   const [hospitals, setHospitals] = useState(props.mydata);
   const [index, setIndex] = useState(0);
   const timeSlots = hospitals[index].time;
@@ -40,6 +52,7 @@ function Index(props: Props) {
   const [sending, setSending] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
+
 
   const changeHospitalHandler: ChangeEventHandler<HTMLSelectElement> = (
     e: any

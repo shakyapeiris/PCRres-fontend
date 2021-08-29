@@ -13,10 +13,9 @@
 .ReportContainer,
 .BookingContainer {
   width: 48%;
-  margin-left: 1%;
-  height: 85vh;
-  overflow: scroll;
-  padding: 10px;
+  height: 85.3vh;
+  overflow-y: scroll;
+  padding: 0px 10px;
 }
 
 .Box {
@@ -58,19 +57,24 @@
 
 .BookingContainer::-webkit-scrollbar,
 .ReportContainer::-webkit-scrollbar {
-  background: white;
+  background: none;
   width: 10px;
 }
 
 /* Track */
-.BookingContainer::-webkit-scrollbar,
-.ReportContainer::-webkit-scrollbar {
-  background: white;
+.BookingContainer::-webkit-scrollbar-track,
+.ReportContainer::-webkit-scrollbar-track {
+  background: none;
+}
+
+.TimeStamp{
+  border-bottom: 1px solid black;
+  border-bottom: 3px;
 }
 
 /* Handle */
-.BookingContainer::-webkit-scrollbar,
-.ReportContainer::-webkit-scrollbar {
+.BookingContainer::-webkit-scrollbar-thumb,
+.ReportContainer::-webkit-scrollbar-thumb {
   background: rgb(175, 175, 175);
   border-radius: 45px;
   transition: 0.3s all ease;
@@ -78,8 +82,8 @@
 }
 
 /* Handle on hover */
-.BookingContainer::-webkit-scrollbar,
-.ReportContainer::-webkit-scrollbar {
+.BookingContainer::-webkit-scrollbar-thumb:hover,
+.ReportContainer::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
 
