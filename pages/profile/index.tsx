@@ -275,7 +275,7 @@ function Index() {
                       }
                     >
                       <div>
-                        <h3>{i._id}</h3>
+                        <h3>{i.testId}</h3>
                         <p>
                           Status:{" "}
                           {i.pending ? "Pending" : i.result.toUpperCase()}
