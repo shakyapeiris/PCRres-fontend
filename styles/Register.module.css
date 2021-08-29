@@ -110,3 +110,16 @@
 .GenderCont label, .GenderCont h3{
   font-family: "Open Sans", sans-serif;
 }
+
+
+@media (max-width: 620px){
+  .Container{
+    flex-direction: column;
+  }
+  .Image{
+    display: none;
+  }
+  .FormCont{
+    width: 100%;
+  }
+}

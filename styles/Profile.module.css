@@ -254,3 +254,37 @@
 .GenderCont h3 {
   font-family: "Open Sans", sans-serif;
 }
+
+
+@media (max-width: 710px){
+  .Cont{
+    flex-direction: column-reverse;
+    height: 170vh;
+
+  }
+  .detailContainer{
+    width: 98%;
+  }
+  .ProfileDataContainer{
+    width: 98%;
+
+  }
+  .ErrorContainer{
+    width: 80%;
+  }
+  .Heading{
+    font-size: 0.8rem;
+}
+  /* .Image{
+    display: none;
+  }
+  .FormCont{
+    width: 100%;
+  } */
+}
+
+@media(max-width: 368px){
+  .BookingContainer h3, .RecordContainer h3{
+    font-size: 0.8rem;
+  }
+}

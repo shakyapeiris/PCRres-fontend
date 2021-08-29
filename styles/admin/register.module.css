@@ -117,3 +117,15 @@
   font-family: "Open Sans", sans-serif;
   align-items: center;
 }
+
+@media (max-width: 620px){
+  .Container{
+    flex-direction: column;
+  }
+  .Image{
+    display: none;
+  }
+  .FormCont{
+    width: 100%;
+  }
+}

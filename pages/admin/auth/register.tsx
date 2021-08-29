@@ -4,6 +4,7 @@ import RegisterForm from "../../../Components/Admin/Auth/Register";
 import useInput from "../../../Hooks/useInput";
 import { AuthContext } from "../../../Store/AuthContext";
 import { useRouter } from "next/router";
+import Head from 'next/head'
 const Register = () => {
 
   const ctx = useContext(AuthContext);
@@ -140,6 +141,10 @@ const Register = () => {
   };
 
   return (
+    <>
+    <Head>
+      <title>Admin Register</title>
+    </Head>
     <div className={classes.Container}>
       <RegisterForm {...properties} />
       <div className={classes.Image}>
@@ -160,6 +165,7 @@ const Register = () => {
         </ul>
       </div>
     </div>
+    </>
   );
 };
 

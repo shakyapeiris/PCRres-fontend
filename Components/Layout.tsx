@@ -16,8 +16,7 @@ const Layout = (props: { children: ReactElement }) => {
         <Link href="/">
           <h1 className={classes.Brand}>PCRres.Lk</h1>
         </Link>
-
-        <nav>
+        <nav className={classes.Cont}>
           <ul>
             {ctx.loginId && !ctx.isAdmin && (
               <li>
@@ -41,11 +40,21 @@ const Layout = (props: { children: ReactElement }) => {
                 <Link href="/auth/login">Login</Link>
               </li>
             )}
-            {ctx.loginId && <li style={{cursor: "pointer"}} onClick={() => {ctx.logout()}}>Logout</li>}
+            {ctx.loginId && (
+              <li
+                style={{ cursor: "pointer" }}
+                onClick={() => {
+                  ctx.logout();
+                }}
+              >
+                Logout
+              </li>
+            )}
           </ul>
         </nav>
       </header>
       <div className={classes.Body}>{props.children}</div>
+      
     </React.Fragment>
   );
 };

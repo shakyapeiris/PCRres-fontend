@@ -109,7 +109,7 @@ function Index() {
       {selectedReport && (
         <Overlay>
           <div className={classes.OverlayDiv}>
-            <h1>Test Id: {selectedReport.testId}</h1>
+            <h1 className={classes.Heading}>Test Id: {selectedReport.testId}</h1>
             <p>Name: {selectedReport.patient.name}</p>
             <p>NIC: {selectedReport.patient.NIC}</p>
             <p>
@@ -130,7 +130,7 @@ function Index() {
       {selectedBooking && (
         <Overlay>
           <div className={classes.OverlayDiv}>
-            <h1>Token {selectedBooking.token}</h1>
+            <h1 className={classes.Heading}>Token {selectedBooking.token}</h1>
             <p>Patient Name: {selectedBooking.user.name}</p>
             <p>Patient Address: {selectedBooking.user.address}</p>
             <p>Patient NIC: {selectedBooking.user.NIC}</p>

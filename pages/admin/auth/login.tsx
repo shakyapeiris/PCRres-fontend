@@ -4,6 +4,7 @@ import LoginForm from "../../../Components/Admin/Auth/Login";
 import classes from "../../../styles/admin/login.module.css";
 import { AuthContext } from "../../../Store/AuthContext";
 import { useRouter } from "next/router";
+import Head from 'next/head'
 
 const login = () => {
   const [message, setMessage] = useState<string | null>(null);
@@ -62,6 +63,10 @@ const login = () => {
     }
   };
   return (
+    <>
+    <Head>
+      <title>Admin Login</title>
+    </Head>
     <div className={classes.Container}>
       <LoginForm
         email={email}
@@ -88,6 +93,7 @@ const login = () => {
           </ul>
       </div>
     </div>
+    </>
   );
 };
 

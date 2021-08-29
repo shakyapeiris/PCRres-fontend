@@ -146,6 +146,9 @@ function Index() {
     <Head>
       <title>Admin Home</title>
     </Head>
+    <div className={classes.Adminwarning}>
+    <h1>Your device cannot view the dashboard please try with another device/laptop</h1>
+    </div>
       {selectedReport && (
         <Overlay>
           <div className={classes.OverlayDiv}>

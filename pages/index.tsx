@@ -5,6 +5,7 @@ import { useRef, useEffect, useContext } from "react";
 import { AuthContext } from "../Store/AuthContext";
 import classes from "../styles/Home.module.css";
 
+
 let ctx: any;
 let window2: any;
 
@@ -148,8 +149,8 @@ const Home: NextPage = () => {
     <>
       <Head>
         <title>PCRres.Lk</title>
+        <link rel="icon" href="../public/favicon.png"/>
       </Head>
-      <div>
         <canvas
           className={classes.Canvas}
           id="myCanvas"
@@ -159,7 +160,6 @@ const Home: NextPage = () => {
           <h1>PCRres.Lk</h1>
           <p>Your PCR Reporter</p>
         </div>
-      </div>
     </>
   );
 };

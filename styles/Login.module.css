@@ -63,3 +63,15 @@
   color: rgb(52, 0, 95);
   text-align: left;
 }
+
+@media (max-width: 620px){
+  .Container{
+    flex-direction: column;
+  }
+  .Image{
+    display: none;
+  }
+  .FormCont{
+    width: 100%;
+  }
+}

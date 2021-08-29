@@ -39,3 +39,17 @@
     background-color: pink;
     padding: 5px;
 }
+
+@media(max-width: 590px){
+    .Container nav ul li{
+        font-size: 0.8rem;
+        letter-spacing: 0px;
+    }
+    .Container{
+        flex-direction: column;
+        padding: 0px;
+    }
+    .Container .Brand{
+        font-size: 1.5rem
+    }
+}

@@ -1,6 +1,7 @@
 import React from 'react'
 import {Line, Bar} from 'react-chartjs-2'
 import { AuthContext } from '../../Store/AuthContext';
+import classes from '../../styles/Analytics.module.css'
 
 import Head from 'next/head'
 
@@ -10,7 +11,7 @@ function Index(props: any) {
       <Head>
         <title>Island Wide Analytics</title>
       </Head>
-        <div style={{width: "70%", height: "75vh", margin: "auto", background: "white", position: "absolute", left: "50%", transform: "translateX(-50%)", top: "20%", borderRadius: "5px", padding: "10px", boxShadow: "5px 5px 27px 3px rgba(0,0,0,0.27)"}}>
+        <div className={classes.Container}>
             <Line data={props.mydata} />
         </div>
         </>

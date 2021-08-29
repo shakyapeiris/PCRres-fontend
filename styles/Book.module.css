@@ -50,3 +50,9 @@
 .Container .RadioContainer{
     margin: 5px;
 }
+
+@media(max-width: 640px){
+  .Container{
+    width: 98%;
+  }
+}

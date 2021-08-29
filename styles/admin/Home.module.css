@@ -18,6 +18,10 @@
   padding: 0px 10px;
 }
 
+.Adminwarning{
+  display: none;
+}
+
 .Box {
   width: 100%;
   background: rgb(0, 103, 34);
@@ -118,4 +122,27 @@
 
 .OverlayDiv{
   font-family: "Open Sans", sans-serif;
+}
+
+@media(max-width: 768px){
+  .ReportContainer, .BookingContainer{
+    display: none;
+  }
+  .Adminwarning{
+    display: block;
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    background-color: white;
+    padding:20px;
+    border-radius: 5px;
+  font-family: "Paytone One", sans-serif;
+
+  }
 }
