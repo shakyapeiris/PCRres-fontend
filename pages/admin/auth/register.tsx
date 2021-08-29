@@ -11,11 +11,11 @@ const Register = () => {
   const router = useRouter()
   
   useEffect(() => {
-    if (ctx.loginId && ctx.isAdmin){
-      router.replace('/admin/home')
-    }
-    else if (!ctx.isAdmin && ctx.loginId){
+    if (localStorage.getItem("loginId") && !(localStorage.getItem("isAdmin") === "true")){
       router.replace('/profile')
+    }
+    else if (localStorage.getItem("loginId") && localStorage.getItem("isAdmin") === "true"){
+      router.replace('/admin/home')
     }
   }, [])
 

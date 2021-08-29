@@ -26,6 +26,11 @@ function AuthContextProvider(props: {children: ReactElement}) {
         localStorage.setItem('isAdmin', isAdmin ? "true" : "false")
         setLoginId(authId)
         setIsAdmin(isAdmin)
+        if (isAdmin){
+            router.replace('/admin/home')
+        }else {
+            router.replace('/profile')
+        }
     }
 
     const logout = () => {

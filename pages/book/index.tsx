@@ -12,6 +12,8 @@ import Button from "../../Components/UI/Button";
 import { AuthContext } from "../../Store/AuthContext";
 import { useRouter } from "next/router";
 
+import Head from 'next/head'
+
 interface Props {
   mydata: {
     id: string;
@@ -34,16 +36,16 @@ const daysOfWeek = [
 ];
 
 function Index(props: Props) {
-  const ctx = useContext(AuthContext)
+  const ctx = useContext(AuthContext);
   let router = useRouter();
   useEffect(() => {
-    if(ctx.loginId === null){
-      router.push('/auth/login')
+    if (localStorage.getItem("loginId") === null){
+      router.replace("/auth/login");
     }
-    else if (ctx.isAdmin && ctx.loginId){
+    else if (localStorage.getItem("loginId") && localStorage.getItem("isAdmin") === "true"){
       router.replace('/admin/home')
     }
-  }, [])
+  }, []);
   const [hospitals, setHospitals] = useState(props.mydata);
   const [index, setIndex] = useState(0);
   const timeSlots = hospitals[index].time;
@@ -52,7 +54,7 @@ function Index(props: Props) {
   const [sending, setSending] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
-
+  const [token, setToken] = useState("")
 
   const changeHospitalHandler: ChangeEventHandler<HTMLSelectElement> = (
     e: any
@@ -91,13 +93,18 @@ function Index(props: Props) {
     });
     const data = await response.json();
     setSending(false);
+    setToken(data.token)
     setMessage(data.message);
     setSuccess(data.successful);
     date.reset();
-    setTimeSlot(null)
+    setTimeSlot(null);
   };
 
   return (
+    <>
+    <Head>
+      <title>Book</title>
+    </Head>
     <form className={classes.Container} onSubmit={submitFormHandler}>
       <h1>Book a spot</h1>
       <div className={classes.FormGroup}>
@@ -107,7 +114,7 @@ function Index(props: Props) {
           defaultValue={hospitals[0].name}
         >
           {hospitals.map((item, index) => {
-            return <option value={index}>{item.name}</option>;
+            return <option value={index}>{item.name} (Address: {item.address})</option>;
           })}
         </select>
       </div>
@@ -146,11 +153,15 @@ function Index(props: Props) {
           );
         })}
       </div>
-      {message && <p className={success ? "success" : "error"}>{message}</p>}
+      <div className={classes.FormGroup}>
+        <h3>Price Per Test: {hospitals[index].price}</h3>
+        {message && <p className={success ? "success" : "error"}>{message}. Your token is: {token + 1}</p>}
+      </div>
       <Button type="submit" onClick={() => {}}>
         {sending ? "Sending" : "Book Now!"}
       </Button>
     </form>
+    </>
   );
 }
 

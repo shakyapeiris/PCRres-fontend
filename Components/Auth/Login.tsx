@@ -28,7 +28,7 @@ function Login(props: LoginProps) {
           value={props.password.inputValue}
           onChange={props.password.valueChangeHandler}
           onBlur={props.password.inputBlurHandler}
-          type="text"
+          type="password"
           styles={undefined}
         />
         <div className="error" data-testid="pwd-err-msg">

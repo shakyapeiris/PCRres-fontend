@@ -5,6 +5,7 @@ import useInput from "../../Hooks/useInput";
 import useSelect from "../../Hooks/use-select";
 import { AuthContext } from "../../Store/AuthContext";
 import { useRouter } from "next/router";
+import Head from "next/head";
 const Register = () => {
 
   const ctx = useContext(AuthContext);
@@ -12,11 +13,11 @@ const Register = () => {
   const router = useRouter()
   
   useEffect(() => {
-    if (ctx.loginId && ctx.isAdmin){
-      router.replace('/admin/home')
-    }
-    else if (!ctx.isAdmin && ctx.loginId){
+    if (localStorage.getItem("loginId") && !(localStorage.getItem("isAdmin") === "true")){
       router.replace('/profile')
+    }
+    else if (localStorage.getItem("loginId") && localStorage.getItem("isAdmin") === "true"){
+      router.replace('/admin/home')
     }
   }, [])
   const name = useInput((inputVal) => inputVal.toString().trim() != "");
@@ -109,6 +110,10 @@ const Register = () => {
   //   province.setInputValue("Central");
   // });
   return (
+    <>
+    <Head>
+      <title>Register</title>
+    </Head>
     <div className={classes.Container}>
       <RegisterForm {...properties} onSubmit={submitFormHandler} />
       <div className={classes.Image}>
@@ -129,6 +134,7 @@ const Register = () => {
         </ul>
       </div>
     </div>
+    </>
   );
 };
 

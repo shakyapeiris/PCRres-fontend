@@ -5,8 +5,10 @@ import useInput from "../../Hooks/useInput";
 import Button from "../../Components/UI/Button";
 import Overlay from "../../Components/Overlay";
 
-import { useRouter } from 'next/router'
+import { useRouter } from "next/router";
 import { AuthContext } from "../../Store/AuthContext";
+
+import Head from 'next/head'
 
 function Index() {
   const [data, setData] = useState<null | any>(null);
@@ -64,9 +66,12 @@ function Index() {
   const ctx = useContext(AuthContext);
   let router = useRouter();
   useEffect(() => {
-    if (ctx.loginId === null) {
-      router.push("/auth/login");
-    } else if (ctx.isAdmin && ctx.loginId) {
+    if (localStorage.getItem("loginId") === null) {
+      router.replace("/auth/login");
+    } else if (
+      localStorage.getItem("loginId") &&
+      localStorage.getItem("isAdmin") === "true"
+    ) {
       router.replace("/admin/home");
     }
 
@@ -98,6 +103,9 @@ function Index() {
   };
   return (
     <>
+    <Head>
+      <title>Profile | {name.inputValue}</title>
+    </Head>
       {selectedReport && (
         <Overlay>
           <div className={classes.OverlayDiv}>
@@ -256,7 +264,7 @@ function Index() {
             <div className={classes.detailContainer}>
               <h3>Reports</h3>
               <div className={classes.RecordContainer}>
-                {data.records.reverse().map((i: any, index: number) => {
+                {data.records.length > 0 ? data.records.reverse().map((i: any, index: number) => {
                   return (
                     <div
                       className={
@@ -284,11 +292,11 @@ function Index() {
                       </div>
                     </div>
                   );
-                })}
+                }): <p>No Records!</p>}
               </div>
               <h3>Bookings</h3>
               <div className={classes.BookingContainer}>
-                {data.bookings.map((i: any, index: number) => {
+                {data.bookings.length > 0 ? data.bookings.map((i: any, index: number) => {
                   return (
                     <div className={classes.Booking}>
                       <div>
@@ -305,7 +313,7 @@ function Index() {
                       </div>
                     </div>
                   );
-                })}
+                }): <p>No bookings!</p>}
               </div>
             </div>
           </>

@@ -4,6 +4,7 @@ import LoginForm from "../../Components/Auth/Login";
 import classes from "../../styles/Login.module.css";
 import { AuthContext } from "../../Store/AuthContext";
 import { useRouter } from "next/router";
+import Head from 'next/head'
 
 const login = () => {
   //   const history = useHistory();
@@ -18,11 +19,11 @@ const login = () => {
   const router = useRouter()
   
   useEffect(() => {
-    if (ctx.loginId && ctx.isAdmin){
-      router.replace('/admin/home')
-    }
-    else if (!ctx.isAdmin && ctx.loginId){
+    if (localStorage.getItem("loginId") && !(localStorage.getItem("isAdmin") === "true")){
       router.replace('/profile')
+    }
+    else if (localStorage.getItem("loginId") && localStorage.getItem("isAdmin") === "true"){
+      router.replace('/admin/home')
     }
   }, [])
   const submitFormHandler: FormEventHandler<HTMLFormElement> = async(e) => {
@@ -63,6 +64,10 @@ const login = () => {
     }
   };
   return (
+    <>
+    <Head>
+      <title>Login</title>
+    </Head>
     <div className={classes.Container}>
       <LoginForm
         email={email}
@@ -93,6 +98,7 @@ const login = () => {
           </ul>
       </div>
     </div>
+    </>
   );
 };
 

@@ -5,7 +5,7 @@ import Overlay from "../../../Components/Overlay";
 import Input from "../../../Components/UI/Input";
 import useInput from "../../../Hooks/useInput";
 import { useRouter } from "next/router";
-
+import Head from 'next/head'
 let date = "";
 let timeStamp = "";
 const timeArray: any = {
@@ -47,8 +47,11 @@ function Index() {
   };
 
   useEffect(() => {
-    if (search.inputValue.trim().length > 1){
+    if (search.inputValue.trim().length >= 1){
       setFilteredRecords(data && data.records.filter((i:any) => i.testId.includes(search.inputValue)))
+    }
+    else if (search.inputValue.trim().length === 0){
+      setFilteredRecords(data && data.records)
     }
   }, [search.inputValue])
 
@@ -130,16 +133,19 @@ function Index() {
   }
 
   useEffect(() => {
-    if (authContext.loginId && !authContext.isAdmin){
+    if (localStorage.getItem("loginId") && !(localStorage.getItem("isAdmin") === "true")){
       router.replace('/profile')
     }
-    else if(authContext.loginId === null){
+    else if(localStorage.getItem("loginId") === null){
       router.replace('/admin/auth/login')
     }
     fetchData();
   }, []);
   return (
     <>
+    <Head>
+      <title>Admin Home</title>
+    </Head>
       {selectedReport && (
         <Overlay>
           <div className={classes.OverlayDiv}>
@@ -216,7 +222,7 @@ function Index() {
           <>
             <div className={classes.BookingContainer}>
               <h1>Bookings</h1>
-              {data.bookings.map((i: any, index: number) => {
+              {data.bookings.length > 0 ? data.bookings.map((i: any, index: number) => {
                 return (
                   <>
                   {i.date != date && changeDate(i.date)}
@@ -241,7 +247,7 @@ function Index() {
                   </div>
                   </>
                 );
-              })}
+              }): <p>No Bookings!</p>}
             </div>
             <div className={classes.ReportContainer}>
               <h1>Pending reports</h1>
@@ -253,7 +259,7 @@ function Index() {
                 value={search.inputValue}
                 placeholder="Search"
               />
-              {filteredRecords && filteredRecords.map((i: any, index: number) => {
+              {filteredRecords.length > 0 ? filteredRecords.map((i: any, index: number) => {
                 return (
                   <div className={classes.Box}>
                     <div>
@@ -271,7 +277,7 @@ function Index() {
                     </div>
                   </div>
                 );
-              })}
+              }): <p>No Records!</p>}
             </div>
           </>
         )}
