@@ -267,6 +267,7 @@ function Index() {
                 {data.records.length > 0 ? data.records.reverse().map((i: any, index: number) => {
                   return (
                     <div
+                    key={i.id}
                       className={
                         i.pending
                           ? classes.ResultPending
@@ -298,7 +299,7 @@ function Index() {
               <div className={classes.BookingContainer}>
                 {data.bookings.length > 0 ? data.bookings.map((i: any, index: number) => {
                   return (
-                    <div className={classes.Booking}>
+                    <div className={classes.Booking} key={i._id}>
                       <div>
                         <h3>{i._id}</h3>
                         <p>Token: {i.token}</p>

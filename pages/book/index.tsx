@@ -114,7 +114,7 @@ function Index(props: Props) {
           defaultValue={hospitals[0].name}
         >
           {hospitals.map((item, index) => {
-            return <option value={index}>{item.name} (Address: {item.address})</option>;
+            return <option key={Math.random()/Math.random()} value={index}>{item.name} (Address: {item.address})</option>;
           })}
         </select>
       </div>
@@ -140,7 +140,7 @@ function Index(props: Props) {
         </label>
         {timeSlots.map((slot) => {
           return (
-            <div className={classes.RadioContainer}>
+            <div className={classes.RadioContainer} key={Math.random()/Math.random()}>
               <input
                 value={slot}
                 type="radio"

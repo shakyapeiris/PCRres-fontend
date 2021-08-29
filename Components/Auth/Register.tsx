@@ -161,8 +161,8 @@ function Register(props: RegisterInterface) {
             placeholder="Province"
             defaultValue={provinces[0]}
           >
-            {provinces.map((province) => {
-              return <option value={province}>{province}</option>;
+            {provinces.map((province, index) => {
+              return <option value={province} key={index}>{province}</option>;
             })}
           </select>
         </div>
@@ -176,8 +176,8 @@ function Register(props: RegisterInterface) {
           >
             {dictrictsAndProvinces[props.province.inputValue] &&
               dictrictsAndProvinces[props.province.inputValue].map(
-                (province: string) => {
-                  return <option value={province}>{province}</option>;
+                (province: string , index: number) => {
+                  return <option value={province} key={index}>{province}</option>;
                 }
               )}
           </select>

@@ -47,7 +47,7 @@ function Login(props: LoginProps) {
       >
         {props.sending ? "Validatiing..." : "Login"}
       </Button>
-      <p>Don't have an accoutn? <Link href="/admin/auth/register">Register</Link></p>
+      <p>Don&apos;t have an accoutn? <Link href="/admin/auth/register">Register</Link></p>
     </form>
   );
 }

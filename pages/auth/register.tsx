@@ -130,7 +130,7 @@ const Register = () => {
           <li>Online PCR Test Booking</li>
           <li>Real time data visualization</li>
           <li>Fast result delivery</li>
-          <li>Can understand what's happening around you</li>
+          <li>Can understand what&apos;s happening around you</li>
         </ul>
       </div>
     </div>

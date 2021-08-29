@@ -25,7 +25,7 @@ const Login = () => {
     else if (localStorage.getItem("loginId") && localStorage.getItem("isAdmin") === "true"){
       router.replace('/admin/home')
     }
-  }, [])
+  }, [router])
 
   const submitFormHandler: FormEventHandler<HTMLFormElement> = async(e) => {
     e.preventDefault();

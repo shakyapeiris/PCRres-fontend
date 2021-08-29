@@ -264,7 +264,7 @@ function Index() {
               />
               {filteredRecords.length > 0 ? filteredRecords.map((i: any, index: number) => {
                 return (
-                  <div className={classes.Box}>
+                  <div className={classes.Box} key={i._id}>
                     <div>
                       <h3>{i.testId}</h3>
                       <p>Patient Name: {i.patient.name}</p>
