@@ -6,7 +6,7 @@ import { AuthContext } from "../../Store/AuthContext";
 import { useRouter } from "next/router";
 import Head from 'next/head'
 
-const login = () => {
+const Login = () => {
   //   const history = useHistory();
   const [message, setMessage] = useState<string | null>(null);
   const [sending, setSending] = useState(false);
@@ -102,4 +102,4 @@ const login = () => {
   );
 };
 
-export default login;
+export default Login;
