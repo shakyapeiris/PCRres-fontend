@@ -41,7 +41,7 @@ const login = () => {
     }
     setSending(true);
 
-    const url = "http://localhost:5000/admin/login"
+    const url = "https://pcrresapi.herokuapp.com/admin/login"
     const response = await fetch(url, {
       method: "POST",
       body: JSON.stringify({

@@ -78,7 +78,7 @@ function Index(props: Props) {
     e.preventDefault();
 
     setSending(true);
-    const url = "http://localhost:5000/user/bookings/add";
+    const url = "https://pcrresapi.herokuapp.com/user/bookings/add";
     const response = await fetch(url, {
       method: "POST",
       body: JSON.stringify({
@@ -166,7 +166,7 @@ function Index(props: Props) {
 }
 
 export async function getStaticProps() {
-  const url = "http://localhost:5000/user/hospitals";
+  const url = "https://pcrresapi.herokuapp.com/user/hospitals";
   const response = await fetch(url);
   const data = await response.json();
   return {

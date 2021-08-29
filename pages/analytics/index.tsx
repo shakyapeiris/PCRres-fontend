@@ -18,7 +18,7 @@ function Index(props: any) {
     )
 }
 export async function getStaticProps() {
-  const url = "http://localhost:5000/user/analytics";
+  const url = "https://pcrresapi.herokuapp.com/user/analytics";
   const response = await fetch(url);
   const data = await response.json();
   let labels = [];

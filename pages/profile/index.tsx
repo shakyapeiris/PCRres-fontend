@@ -48,7 +48,7 @@ function Index() {
 
   const fetchData = async () => {
     setLoading(true);
-    const url = `http://localhost:5000/user/${localStorage.getItem("loginId")}`;
+    const url = `https://pcrresapi.herokuapp.com/user/${localStorage.getItem("loginId")}`;
     const response = await fetch(url);
     const data = await response.json();
     console.log(data);
@@ -81,7 +81,7 @@ function Index() {
   const updateProfileHandler = async (e: any) => {
     setSending(true);
     e.preventDefault();
-    const url = "http://localhost:5000/user/update";
+    const url = "https://pcrresapi.herokuapp.com/user/update";
     const response = await fetch(url, {
       method: "POST",
       body: JSON.stringify({

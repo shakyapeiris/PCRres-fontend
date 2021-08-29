@@ -77,7 +77,7 @@ const Register = () => {
     if (!password.isInputValid) return password.inputBlurHandler();
 
     setSending(true);
-    const url = "http://localhost:5000/admin/register";
+    const url = "https://pcrresapi.herokuapp.com/admin/register";
     const response = await fetch(url, {
       method: "POST",
       body: JSON.stringify({

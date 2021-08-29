@@ -28,7 +28,7 @@ function Index() {
 
   const fetchData = async () => {
     setLoading(true);
-    const url = `http://localhost:5000/admin/records/${localStorage.getItem(
+    const url = `https://pcrresapi.herokuapp.com/admin/records/${localStorage.getItem(
       "loginId"
     )}`;
     const response = await fetch(url);
@@ -79,7 +79,7 @@ function Index() {
 
   const postNewRecord = async () => {
     setSending(true);
-    const url = "http://localhost:5000/admin/add-record";
+    const url = "https://pcrresapi.herokuapp.com/admin/add-record";
     const response = await fetch(url, {
       method: "POST",
       body: JSON.stringify({
@@ -102,7 +102,7 @@ function Index() {
   const updateReport = async () => {
     setSending(true);
 
-    const url = "http://localhost:5000/admin/update-record";
+    const url = "https://pcrresapi.herokuapp.com/admin/update-record";
     const response = await fetch(url, {
       method: "POST",
       body: JSON.stringify({
