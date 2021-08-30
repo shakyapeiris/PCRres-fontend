@@ -111,7 +111,7 @@ function Index(props: Props) {
         <label>Select a Hospital: </label>
         <select
           onChange={changeHospitalHandler}
-          defaultValue={hospitals[0].name}
+          //defaultValue={hospitals[0].name}
         >
           {hospitals.map((item, index) => {
             return <option key={Math.random()} value={index}>{item.name} (Address: {item.address})</option>;
