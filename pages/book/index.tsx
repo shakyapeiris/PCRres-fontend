@@ -114,7 +114,7 @@ function Index(props: Props) {
           //defaultValue={hospitals[0].name}
         >
           {hospitals.map((item, index) => {
-            return <option key={Math.random()} value={index}>{item.name} (Address: {item.address})</option>;
+            return <option key={item._id} value={index}>{item.name} (Address: {item.address})</option>;
           })}
         </select>
       </div>
